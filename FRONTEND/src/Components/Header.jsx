@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <nav className=" h-[90px] flex justify-between items-center p-2 bg-black ">
       <div className="flex  gap-12 items-center ml-8 ">
-        <img src={logo} className=" h-16 w-[60px] md:w-[115px]  object-cover" />
+        <img src={logo} className=" h-16 w-[60px] md:w-[115px]  object-cover "  />
         <Link className="text-white" to="/">
           <span className="text-white hover:text-red-700 hover:underline">
             Home

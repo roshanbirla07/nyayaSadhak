@@ -2,11 +2,19 @@ import { useRef, useState } from "react";
 //import { useSidebar } from "../context/SidebarContext";
 import Logo from "../assets/logo.png";
 import { useSidebar } from "../context/SidebarContext";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+
 const Menu = (props) => {
+  
+
   const { children, items } = props;
   const [isOpened, setIsOpened] = useState(true);
   const { setQueryType, hide, setHide } = useSidebar();
+  const navigate = useNavigate();
   return (
+    
     <div className="">
       <button
         className="w-full flex items-center justify-between text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150"
@@ -127,8 +135,10 @@ const Sidebar = ({ children }) => {
         <div className="flex flex-col h-full px-4">
           <div className=" h-20 flex justify-between items-center pl-2">
             <div className="gap-2 h-20 flex items-center ">
-              <img src={Logo} alt="LAWGPT" className="w-20" />
-              <h1 className="font-bold text-3xl">NyaySarathi</h1>
+            <Link to="/" className="flex items-center gap-2">
+                <img src={Logo} alt="LAWGPT" className="w-20 cursor-pointer" />
+                <h1 className="font-bold text-3xl">NyaySarathi</h1>
+              </Link>
             </div>
             <div className="lg:hidden">
               <button onClick={() => setHide(!hide)}>
